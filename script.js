@@ -19,13 +19,14 @@ ____________________
 
 // The Pseudocode
 // 1. Computer Generating Rock/Paper/Scissors
-    //  CREATE getComputerChoice function to randomly choose between rock, paper, scissors
+    //  CREATE getComputerCHOICE function to randomly choose between rock, paper, scissors
     //  RETURN one of the string values 
 
 // 2. Human input Rock/Paper/Scissors
-// CREATE getHumanChoice function
+// CREATE getHumanCHOICE function
     // LOOP until valid input is received
     // GET user's input
+        // CONVERT user's input to lowercase to allow case insensitivity
         // IF input is valid (rock, paper, or scissors)
         // RETURN input
     // ELSE user inputs an invalid value
@@ -33,17 +34,47 @@ ____________________
         // CONTINUE to loop to get user's input again.
 
 // 3. Keeping Track of Player Scores
-// CREATE variables for humanSCORE and computerSCORE
+// CREATE variables for humanSCORE and computerSCORE in global scope
     // INIT values are 0
-// CREATE determineWINNER function
-    //LOOP until winner reaches 5 points
+
+// 4. Playing One Round (gathers input from 1 and 2)
+// CREATE playROUND function
+    //  INPUT humanCHOICE, computerCHOICE
+    //  CONVERT humanCHOICE into lower-case to allow case-insensitivity
+    //  CREATE determineWINNER function
         // INPUT: humanCHOICE, computerCHOICE
         // IF humanCHOICE equals computerCHOICE
             // RETURN message "it's a draw!"
         // ELSE IF humanCHOICE is "rock" AND computerCHOICE is "scissors"
             // INCREMENT humanCHOICE by 1
             // RETURN message "Human wins."
-    
+        // ELSE IF humanCHOICE is "paper" AND computerCHOICE is "rock"
+            // INCREMENT humanCHOICE by 1
+            // RETURN message "Human wins."
+        // ELSE IF humanCHOICE is "scissors" AND computerCHOICE is "paper"
+            // INCREMENT humanCHOICE by 1
+            // RETURN message "Human wins."
+        // ELSE
+            // INCREMENT computerSCORE by 1
+            // RETURN message "Computer wins."
+        // 
+
+// 5. Creating the game for 5 rounds
+// CREATE playGAME function
+    // MOVE playROUND function inside this scope so variables can be called in this block
+    // Add LOOP 
+
+
+
+
+
+
+
+
+
+   
+
+
 
 
 
