@@ -18,12 +18,14 @@ ____________________
 
 
 // The Pseudocode
-// 1. Computer Generating Rock/Paper/Scissors
+
+// 1. getComputerCHOICE
     //  CREATE getComputerCHOICE function 
     // SET choices TO randomly choose ("rock", "paper", "scissors")
     //  RETURN one of the string values 
+    // END FUNCTION
 
-// 2. Human input Rock/Paper/Scissors
+// 2. getHumanCHOICE
 // CREATE getHumanCHOICE function
     // LOOP until valid input is received
     // GET user's input
@@ -34,6 +36,7 @@ ____________________
         // ALERT user to only choose between rock, paper, scissors value.
         // CONTINUE to loop to get user's input again.
         // ENDIF
+    // END FUNCTION
 
 // 3. Declaring Player Scores
 // CREATE variables for humanSCORE and computerSCORE in global scope
@@ -45,7 +48,7 @@ ____________________
     //  CONVERT humanCHOICE into lower-case to allow case-insensitivity
     // CREATE determineWINNER function
     // INPUT: humanCHOICE, computerCHOICE
-    // IF humanCHOICE equals computerCHOICE
+    // IF humanCHOICE equals computerCHOICE THEN
         // RETURN message "it's a draw!"
     // ELSE IF (humanCHOICE is "rock" AND computerCHOICE is "scissors") OR
     //         (humanCHOICE is "paper" AND computerCHOICE is "rock") OR
@@ -56,8 +59,13 @@ ____________________
         // INCREMENT computerSCORE by 1
         // RETURN message "Computer wins."
     // ENDIF
+    // END FUNCTION
 
-    // CONSTANT 
+    // CONSTANT humanSELECTION = CALL getHumanCHOICE()
+    // CONSTANT computerSELECTION = CALL getComputerCHOICE()
+
+    //CALL playROUND(humanSELECTION, computerSELECTION)
+        //RETURNS total score of human and computer from one round.
 
 // 5. Creating the game for 5 rounds
 // CREATE playGAME function
