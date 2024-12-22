@@ -19,7 +19,8 @@ ____________________
 
 // The Pseudocode
 // 1. Computer Generating Rock/Paper/Scissors
-    //  CREATE getComputerCHOICE function to randomly choose between rock, paper, scissors
+    //  CREATE getComputerCHOICE function 
+    // SET choices TO randomly choose ("rock", "paper", "scissors")
     //  RETURN one of the string values 
 
 // 2. Human input Rock/Paper/Scissors
@@ -32,37 +33,36 @@ ____________________
     // ELSE user inputs an invalid value
         // ALERT user to only choose between rock, paper, scissors value.
         // CONTINUE to loop to get user's input again.
+        // ENDIF
 
-// 3. Keeping Track of Player Scores
+// 3. Declaring Player Scores
 // CREATE variables for humanSCORE and computerSCORE in global scope
     // INIT values are 0
 
-// 4. Playing One Round (gathers input from 1 and 2)
+// 4. Playing One Round + adding up scores (gathers input from 1 and 2)
 // CREATE playROUND function
     //  INPUT humanCHOICE, computerCHOICE
     //  CONVERT humanCHOICE into lower-case to allow case-insensitivity
-    //  CREATE determineWINNER function
-        // INPUT: humanCHOICE, computerCHOICE
-        // IF humanCHOICE equals computerCHOICE
-            // RETURN message "it's a draw!"
-        // ELSE IF humanCHOICE is "rock" AND computerCHOICE is "scissors"
-            // INCREMENT humanCHOICE by 1
-            // RETURN message "Human wins."
-        // ELSE IF humanCHOICE is "paper" AND computerCHOICE is "rock"
-            // INCREMENT humanCHOICE by 1
-            // RETURN message "Human wins."
-        // ELSE IF humanCHOICE is "scissors" AND computerCHOICE is "paper"
-            // INCREMENT humanCHOICE by 1
-            // RETURN message "Human wins."
-        // ELSE
-            // INCREMENT computerSCORE by 1
-            // RETURN message "Computer wins."
-        // 
+    // CREATE determineWINNER function
+    // INPUT: humanCHOICE, computerCHOICE
+    // IF humanCHOICE equals computerCHOICE
+        // RETURN message "it's a draw!"
+    // ELSE IF (humanCHOICE is "rock" AND computerCHOICE is "scissors") OR
+    //         (humanCHOICE is "paper" AND computerCHOICE is "rock") OR
+    //         (humanCHOICE is "scissors" AND computerCHOICE is "paper")
+        // INCREMENT humanSCORE by 1
+        // RETURN message "Human wins."
+    // ELSE
+        // INCREMENT computerSCORE by 1
+        // RETURN message "Computer wins."
+    // ENDIF
+
+    // CONSTANT 
 
 // 5. Creating the game for 5 rounds
 // CREATE playGAME function
     // MOVE playROUND function inside this scope so variables can be called in this block
-    // Add LOOP 
+    // Add LOOP until winner reaches 5 points
 
 
 
