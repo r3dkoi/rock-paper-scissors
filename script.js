@@ -73,6 +73,15 @@ ____________________
     // Add LOOP until winner reaches 5 points
 
 
+const humanSCORE = 0 // Track of human points during the game
+const computerSCORE = 0 // Track of computer points during the game
+
+function getComputerCHOICE() {
+    Math.random("rock", "paper", "scissors");
+    console.log(getComputerCHOICE);
+} // Function for computer to generate between 3 choices 
+
+
 
 
 
