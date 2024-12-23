@@ -35,6 +35,7 @@
     // ELSE user inputs an invalid value
         // ALERT user to only choose between rock, paper, scissors value.
         // CONTINUE to loop to get user's input again.
+    // ELSE IF user wants to cancel without doing an input.
         // ENDIF
     // END FUNCTION
 
@@ -87,11 +88,16 @@ function getHumanCHOICE(){
     let choice;
     while (true){
         choice = prompt("Please choose your option: rock, paper, or scissors.");
-        if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        if (choice === null){
+            return null; // this closes the prompt box if user doesnt want to add any input
+        }
+        else if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return choice.toLowerCase(); 
         }
         else {
             alert("Invalid option, please choose one of the three options.");
         }
+       
+        }
     }
-} 
+
