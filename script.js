@@ -80,7 +80,7 @@ let computerSCORE = 0 // Track of computer points during the game
 function getComputerCHOICE() {
      const choices = ["rock","paper","scissors"];
         return choices[Math.floor(Math.random() * choices.length)];
-    } // Function for computer to generate between 3 choices 
+} // Function for computer to generate between 3 choices 
     let computerCHOICE = getComputerCHOICE()
     console.log(computerCHOICE);
 
@@ -98,11 +98,44 @@ function getHumanCHOICE(){
             alert("Invalid option, please choose one of the three options.");
         }
         }
-    } 
+} 
     let humanCHOICE = getHumanCHOICE();
     // Function to get human input for rock, paper, scissors
         // To use, call in console 
 
 function playROUND {
-    const 
-}
+    const humanCHOICE = getHumanCHOICE();
+    if (humanCHOICE === null) {
+        return null;
+    }
+    const computerCHOICE = getComputerCHOICE();{
+        console.log(computerCHOICE);  
+    }
+
+    determineWINNER() {
+        if (humanCHOICE === computerCHOICE) {
+            return ("It's a draw!");
+        }
+        else if (humanCHOICE === "rock" && computerCHOICE === "scissors") ||
+                (humanCHOICE === "paper" && computerCHOICE === "rock") ||
+                (humanCHOICE === "scissors" && computerCHOICE === "paper") {
+                    return (`Human wins! + ${incrementHumanSCORE()}`); 
+                    incrementHumanSCORE() {
+                        humanSCORE++;
+                        return humanSCORE;
+                    }  
+                }
+                   
+                }    
+        else {
+            return("Computer wins!");
+         }
+            incrementComputerSCORE(){
+                ComputerSCORE++
+            }
+
+        }
+
+    }
+} 
+
