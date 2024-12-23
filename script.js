@@ -103,22 +103,17 @@ function getHumanCHOICE(){
     // Function to get human input for rock, paper, scissors
         // To use, call in console 
 
-function playROUND {
-    const humanCHOICE = getHumanCHOICE();
+function playROUND(humanCHOICE, computerCHOICE)
     if (humanCHOICE === null) {
         return null;
     }
-    const computerCHOICE = getComputerCHOICE();{
-        console.log(computerCHOICE);  
-    }
-
     determineWINNER() {
         if (humanCHOICE === computerCHOICE) {
             return ("It's a draw!");
         }
-        else if (humanCHOICE === "rock" && computerCHOICE === "scissors") ||
+        else if ((humanCHOICE === "rock" && computerCHOICE === "scissors") ||
                 (humanCHOICE === "paper" && computerCHOICE === "rock") ||
-                (humanCHOICE === "scissors" && computerCHOICE === "paper") {
+                (humanCHOICE === "scissors" && computerCHOICE === "paper")) {
                     return (`Human wins! + ${incrementHumanSCORE()}`); 
                     incrementHumanSCORE() {
                         humanSCORE++;
