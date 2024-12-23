@@ -72,20 +72,6 @@
 // CREATE playGAME function
     // MOVE playROUND function inside this scope so variables can be called in this block
     // Add LOOP until winner reaches 5 points
-
-
-
-function incrementHumanSCORE(){
-    humanSCORE++;
-} // function to increment human score by 1 if they win
-
-function incrementComputerSCORE(){
-    computerSCORE++;
-} // function to increment computer score by 1 if they win
-
-let humanSCORE = 0 // Track of human points during the game
-let computerSCORE = 0 // Track of computer points during the game
-
 function getComputerCHOICE() {
      const choices = ["rock","paper","scissors"];
         return choices[Math.floor(Math.random() * choices.length)];
@@ -112,6 +98,19 @@ function getHumanCHOICE(){
     // Function to get human input for rock, paper, scissors
         // To use, call in console 
 
+
+
+function incrementHumanSCORE(){
+    humanSCORE++;
+} // function to increment human score by 1 if they win
+
+function incrementComputerSCORE(){
+    computerSCORE++;
+} // function to increment computer score by 1 if they win
+
+let humanSCORE = 0 // Track of human points during the game
+let computerSCORE = 0 // Track of computer points during the game
+
 function playROUND(humanCHOICE, computerCHOICE){
     if (humanCHOICE === null) {
         return null;
@@ -122,8 +121,10 @@ function playROUND(humanCHOICE, computerCHOICE){
                 (humanCHOICE === "paper" && computerCHOICE === "rock") ||
                 (humanCHOICE === "scissors" && computerCHOICE === "paper")
         ) { 
+            incrementHumanSCORE();
             return `"Human wins! Score: ${humanSCORE}`;
         } else { 
+            incrementComputerSCORE();
             return `Computer wins! Score: ${computerSCORE}`;
         }    
     }
