@@ -97,7 +97,12 @@ function getHumanCHOICE(){
         else {
             alert("Invalid option, please choose one of the three options.");
         }
-       
         }
-    }
+    } 
+    let humanCHOICE = getHumanCHOICE();
+    // Function to get human input for rock, paper, scissors
+        // To use, call in console 
 
+function playROUND {
+    const 
+}
