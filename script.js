@@ -112,7 +112,7 @@ function getHumanCHOICE(){
     // Function to get human input for rock, paper, scissors
         // To use, call in console 
 
-function playROUND(humanCHOICE, computerCHOICE)
+function playROUND(humanCHOICE, computerCHOICE){
     if (humanCHOICE === null) {
         return null;
     } else if (humanCHOICE === computerCHOICE) {
@@ -122,11 +122,8 @@ function playROUND(humanCHOICE, computerCHOICE)
                 (humanCHOICE === "paper" && computerCHOICE === "rock") ||
                 (humanCHOICE === "scissors" && computerCHOICE === "paper")
         ) { 
-            return 
-                    
-        else {
-            return("Computer wins!")
-        }
-
+            return `"Human wins! Score: ${humanSCORE}`;
+        } else { 
+            return `Computer wins! Score: ${computerSCORE}`;
+        }    
     }
-
