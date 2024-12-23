@@ -8,7 +8,7 @@
 // ________________________
 
 // The Planning 
-____________________
+// ____________________
 // Need a prompt box
 // Only done in browser console
 // Will just use VSC
@@ -27,7 +27,7 @@ ____________________
 
 // 2. getHumanCHOICE
 // CREATE getHumanCHOICE function
-    // LOOP until valid input is received
+    // LOOP until valid input is received (maybe I wont too hard right now)
     // GET user's input
         // CONVERT user's input to lowercase to allow case insensitivity
         // IF input is valid (rock, paper, or scissors)
@@ -73,26 +73,25 @@ ____________________
     // Add LOOP until winner reaches 5 points
 
 
-const humanSCORE = 0 // Track of human points during the game
-const computerSCORE = 0 // Track of computer points during the game
+let humanSCORE = 0 // Track of human points during the game
+let computerSCORE = 0 // Track of computer points during the game
 
 function getComputerCHOICE() {
-    Math.random("rock", "paper", "scissors");
-    console.log(getComputerCHOICE);
-} // Function for computer to generate between 3 choices 
+     const choices = ["rock","paper","scissors"];
+        return choices[Math.floor(Math.random() * choices.length)];
+    } // Function for computer to generate between 3 choices 
+    let computerCHOICE = getComputerCHOICE()
+    console.log(computerCHOICE);
 
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
-
+function getHumanCHOICE(){
+    let choice;
+    while (true){
+        choice = prompt("Please choose your option: rock, paper, or scissors.");
+        if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        return choice.toLowerCase(); 
+        }
+        else {
+            alert("Invalid option, please choose one of the three options.");
+        }
+    }
+} 
