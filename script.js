@@ -74,6 +74,15 @@
     // Add LOOP until winner reaches 5 points
 
 
+
+function incrementHumanSCORE(){
+    humanSCORE++;
+} // function to increment human score by 1 if they win
+
+function incrementComputerSCORE(){
+    computerSCORE++;
+} // function to increment computer score by 1 if they win
+
 let humanSCORE = 0 // Track of human points during the game
 let computerSCORE = 0 // Track of computer points during the game
 
@@ -106,31 +115,18 @@ function getHumanCHOICE(){
 function playROUND(humanCHOICE, computerCHOICE)
     if (humanCHOICE === null) {
         return null;
-    }
-    determineWINNER() {
-        if (humanCHOICE === computerCHOICE) {
+    } else if (humanCHOICE === computerCHOICE) {
             return ("It's a draw!");
-        }
-        else if ((humanCHOICE === "rock" && computerCHOICE === "scissors") ||
+        } else if (
+                (humanCHOICE === "rock" && computerCHOICE === "scissors") ||
                 (humanCHOICE === "paper" && computerCHOICE === "rock") ||
-                (humanCHOICE === "scissors" && computerCHOICE === "paper")) {
-                    return (`Human wins! + ${incrementHumanSCORE()}`); 
-                    incrementHumanSCORE() {
-                        humanSCORE++;
-                        return humanSCORE;
-                    }  
-                }
-                   
-                }    
+                (humanCHOICE === "scissors" && computerCHOICE === "paper")
+        ) { 
+            return 
+                    
         else {
-            return("Computer wins!");
-         }
-            incrementComputerSCORE(){
-                ComputerSCORE++
-            }
-
+            return("Computer wins!")
         }
 
     }
-} 
 
