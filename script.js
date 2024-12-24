@@ -136,6 +136,6 @@ function playGAME(){
       } // loop unti one player gets 5 points.
 }
 
-playGAME(); // TO start the game, call PlayGAME();
+// playGAME(); // TO start the game, call PlayGAME();
 
 
