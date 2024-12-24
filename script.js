@@ -86,7 +86,10 @@ function playGAME(){
 
     function getComputerCHOICE() {
         const choices = ["rock", "paper", "scissors"];
-        return choices[Math.floor(Math.random() * choices.length)];
+        const choice = (choices[Math.floor(Math.random() * choices.length)]);
+        console.log(`Computer chose: ${choice}`);
+        return choice;
+        
     } // fuction to randomise computer choices between 3 options
 
     function getHumanCHOICE() {
@@ -98,7 +101,7 @@ function playGAME(){
             }
             choice = choice.toLowerCase(); // Convert to lowercase immediately
             if (choice === "rock" || choice === "paper" || choice === "scissors") {
-                return choice;
+                return (choice);
             } else {
                 alert("Invalid option, please choose one of the three options.");
             }
