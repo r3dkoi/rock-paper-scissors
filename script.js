@@ -86,8 +86,9 @@ function getHumanCHOICE(){
         if (choice === null){
             return null; // this closes the prompt box if user doesnt want to add any input
         }
+        choice = choice.toLowerCase(); // turns input case insensitive
         else if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        return choice.toLowerCase(); 
+        return choice;
         }
         else {
             alert("Invalid option, please choose one of the three options.");
