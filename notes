@@ -1,0 +1,54 @@
+Just to explain the concepts to why I do this and that
+and to test my understanding for myself
+
+
+1. function getComputerCHOICE
+    - Learnt that if this function doesnt Need
+        any external input, the parameters can be  
+        be blank! 
+        Why? Because it can perform its task with the data
+        inside its scope (e.g the action inside the {})
+
+    - Also in order to get the Math.random to work; I needed to create the choices array first.
+    - I could've done it withoout arrays but I'll leave it the way it is.
+
+2. getHumanCHOICE
+    - Using a WHILE loop is better since it prompts the user continuously until a valid input is inputted; a FOR loop is not advisable since you need to know the amount of iterations beforehand (e.g probably if you keep getting the password wrong, you use FOR loops)
+
+    - I tried if choices.length like before, but .length only CHECKS the NUMBER of elements in an ARRAY not if the user input matches the valid options inside the array. .length is probably more useful for checking the range and limits of elements.
+
+ - I'm putting alot of function expressions in this one; particularly since I want the user input to be case-insensitive and for a WHILE loop to happen.
+
+ - Doing  === is the basic building block for arrays it seems.
+
+ - Turns out I needed to move the choice.toLowerCase(); above the else if, so it gets executed first before the comparison. 
+  - This will alow the input to be converted to lowercase BEFORE the comparison function.
+
+ 3. function incrementComputer and incrementHuman Scores
+  - Learnt the method for incrementing a value by 1 is (value)++
+
+4. playROUND 
+    - fuck this was fun to learn about, had alot of help from github AI pilot
+    - so playROUND() has two parameters unlike getHumanCHOICE and getComputerCHOICE 
+        because it needed the outputs from the two functions or else it wont work.
+        - I need to check if it is case-sensitive though
+
+    - uses ELSE-IF statements here because of different outcomes/scenarios
+        e.g 1. the human needed to choose a choice and if they won, they score a point 2. the computer wins and score a point
+    - okay so how I understand the && and || here:
+        1. one scenario is if human chooses rock AND the computer chooses SCISSORS, the human wins. the ORs are there for other scenarios. 
+         2. The && is used to also determine the false statement -- e.g the inverse; if the computer chose scissors and human chose rock it'll be false and it'll go to the last else statement that'll run the computer wins line.
+    -  Added the backtick and ${} to call the variable of humanSCORE and computerSCORE; as I cant put in an actual function inside
+    - in order to have the incrementHumanSCORE(); function work inside this block, I needed to call it inside playROUND.
+
+5. // getHumanCHOICE and getComputerCHOICE is responsible for getting the input of choices
+// PlayROUND is responsible for determining the OUTCOME of the based on those choices.
+// const humanSELECTION and computerSELECTION is responsible for storing the input of the choices.
+// and then passing it over to playROUND in order to be called upon in playGAME.
+
+I only dont really understand how to call in functions just yet, it hasnt properly clicked for me. I might need to find more practice for it.
+
+
+Now I have this issue whenever I get into the page, it automatically prompts me. I'm gonna try figure out how to only prompt me when I call it via console.
+    - Apparently to fix this I need to move all the functions I made in the global scope within playGAME
+    - And in order for the ComputerChoice to appear before every prompt from player, i had to add the console.log. I definitely needed to plan this out more via pseudocode but I'm still practising!
