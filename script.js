@@ -5,7 +5,13 @@
 // The player gets asked an input for their choice of 'rock, paper, scissors'
 // The players (Human and Computer) score will be kept tracked of as the game progresses.
 // The total rounds is five, over one round of rock-paper-scissors.
-// ________________________
+// 
+// getHumanCHOICE and getComputerCHOICE is responsible for getting the input of choices
+// PlayROUND is responsible for determining the OUTCOME of the based on those choices.
+// const humanSELECTION and computerSELECTION is responsible for storing the input of the choices.
+// and then passing it over to playROUND in order to be called upon in playGAME.
+
+________________________
 
 // The Planning 
 // ____________________
@@ -72,6 +78,7 @@
 // CREATE playGAME function
     // MOVE playROUND function inside this scope so variables can be called in this block
     // Add LOOP until winner reaches 5 points
+
 function getComputerCHOICE() {
      const choices = ["rock","paper","scissors"];
         return choices[Math.floor(Math.random() * choices.length)];
@@ -87,7 +94,7 @@ function getHumanCHOICE(){
             return null; // this closes the prompt box if user doesnt want to add any input
         }
         choice = choice.toLowerCase(); // turns input case insensitive
-        else if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return choice;
         }
         else {
@@ -100,32 +107,43 @@ function getHumanCHOICE(){
         // To use, call in console 
 
 
+function playGAME(){
+    let humanSCORE = 0 // Track of human points during the game
+    let computerSCORE = 0 // Track of computer points during the game
+    function incrementHumanSCORE(){
+        humanSCORE++;
+    } // function to increment human score by 1 if they win
 
-function incrementHumanSCORE(){
-    humanSCORE++;
-} // function to increment human score by 1 if they win
+    function incrementComputerSCORE(){
+        computerSCORE++;
+    } // function to increment computer score by 1 if they win
 
-function incrementComputerSCORE(){
-    computerSCORE++;
-} // function to increment computer score by 1 if they win
+    function playROUND(humanCHOICE, computerCHOICE){
+        if (humanCHOICE === null) {
+            return null;
+        } else if (humanCHOICE === computerCHOICE) {
+                return ("It's a draw!");
+            } else if (
+                    (humanCHOICE === "rock" && computerCHOICE === "scissors") ||
+                    (humanCHOICE === "paper" && computerCHOICE === "rock") ||
+                    (humanCHOICE === "scissors" && computerCHOICE === "paper")
+            ) { 
+                incrementHumanSCORE();
+                return `"Human wins! Score: ${humanSCORE}`;
+            } else { 
+                incrementComputerSCORE();
+                return `Computer wins! Score: ${computerSCORE}`;
+            }    
+      }
+      while (humanSCORE < 5 && computerSCORE <5) {
+        const humanSELECTION = getHumanCHOICE();
+        const computerSELECTION = getComputerCHOICE();
+        console.log(playROUND(humanSELECTION, computerSELECTION));
+      }
 
-let humanSCORE = 0 // Track of human points during the game
-let computerSCORE = 0 // Track of computer points during the game
-
-function playROUND(humanCHOICE, computerCHOICE){
-    if (humanCHOICE === null) {
-        return null;
-    } else if (humanCHOICE === computerCHOICE) {
-            return ("It's a draw!");
-        } else if (
-                (humanCHOICE === "rock" && computerCHOICE === "scissors") ||
-                (humanCHOICE === "paper" && computerCHOICE === "rock") ||
-                (humanCHOICE === "scissors" && computerCHOICE === "paper")
-        ) { 
-            incrementHumanSCORE();
-            return `"Human wins! Score: ${humanSCORE}`;
-        } else { 
-            incrementComputerSCORE();
-            return `Computer wins! Score: ${computerSCORE}`;
-        }    
-    }
+      if (humanSCORE === 5) {
+        console.log("Human wins the game!");
+      } else {
+        console.log("Computer wins the game!");
+      }
+}
