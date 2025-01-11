@@ -73,7 +73,5 @@ CREATE function = playGame
         CALL playRound without parameters
             playRound();
 
-Commit testing
-
 
     
