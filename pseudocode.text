@@ -3,9 +3,10 @@ LOGIC for Computer Choice
 CREATE function = getComputerChoice
 CREATE computerCHOICES ["rock","paper","scissors"]
 
-    CREATE randomIndex AS Integer // declares randomIndex as a variable and is set as an integer. 
-    SET randomIndex TO (Math.floor(Math.random() * LENGTH of computerCHOICES))
-    RETURN randomIndex
+    CREATE computerChoice AS Integer // declares randomIndex as a variable and is set as an integer. 
+    SET computerChoice TO computerChoices(Math.floor(Math.random() * LENGTH of computerCHOICES)) //  doing computerChoices in front of the math.floor means its choosing from that array.
+    DISPLAY message to console "Computer chose computerChoice" // backtick required
+    RETURN computerChoice
 END function
 
 ---------------------------------
