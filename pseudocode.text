@@ -1,0 +1,77 @@
+LOGIC for Computer Choice
+
+CREATE function = getComputerChoice
+CREATE computerCHOICES ["rock","paper","scissors"]
+
+    CREATE randomIndex AS Integer // declares randomIndex as a variable and is set as an integer. 
+    SET randomIndex TO (Math.floor(Math.random() * LENGTH of computerCHOICES))
+    RETURN randomIndex
+END function
+
+---------------------------------
+
+LOGIC for Human Choice
+
+CREATE function = getHumanChoice
+        CREATE humanChoice AS string
+        PROMPT "Choose between rock, paper, or scissors"
+            SET choice.toLowerCase(); //ensures input is case-insensitive
+                WHILE input is TRUE
+                    IF choice is null (not a string)
+                        RETURN null // closes promptbox
+                    ELSE IF choice EQUALS "rock" OR "paper" OR "scissors"
+                        RETURN choice
+                    ELSE 
+                        ALERT "Invalid choice, please choose again."
+                    //loops back to promptbox
+                    ENDIF 
+    END function
+
+---------------------------------
+
+LOGIC for keeping track of Player Scores
+
+//initial value
+SET humanScore = 0
+SET computerScore = 0 
+// Will probably increment the score loops to decide how long a round goes for.
+
+---------------------------------
+
+LOGIC to play a SINGLE round + Score function
+CREATE function = playRound
+SET humanChoice, computerChoice inside playRound() // gathers input from getComputerChoice & getHumanChoice
+    WHILE input is TRUE
+        IF humanCHOICE EQUALS computerCHOICE
+            RETURN "It's a draw."
+        ELSE IF humanChoice EQUALS "scissors" AND computerChoice EQUALS "paper" OR
+                humanChoice EQUALS "paper" AND computerChoice EQUALS "rock" OR
+                humanChoice EQUALS "rock" AND computerChoice EQUALS "paper"
+                    LOOP FOR humanScore FROM 0 to 5
+                        INCREMENT by 1
+                    RETURN "You win this round! `${humanChoice} beats ${computerChoice!}`" // make sure to do backticks here. 
+        ELSE 
+            LOOP FOR computerScore FROM 0 to 5
+                INCREMENT by 1
+            RETURN "Computer wins this round. `${computerChoice} beats ${humanChoice}."
+    ENDFUNCTION
+------------------------------------
+LOGIC for playing a single round
+SET humanSelection TO getHumanChoice(); //calls getHumanChoice function
+SET computerSelection TO getComputerChoice(); //calls getComputerChoice function
+
+CALL playRound(humanSelection, computerSelection) // lets a single round to be played
+
+------------------------------------
+LOGIC for playing 5 Rounds and Declaring a winner
+
+CREATE function = playGame
+    MOVE playRound inside here
+    MOVE getComputerChoice function inside playRound
+    MOVE getHumanChoice function inside playRound
+    MOVE humanScore and computerScore inside playGame
+        CALL playRound without parameters
+            playRound();
+
+
+    
