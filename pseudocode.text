@@ -14,12 +14,12 @@ END function
 LOGIC for Human Choice
 
 CREATE function = getHumanChoice
-        CREATE humanChoice 
+        CREATE humanChoices ["rock", "paper", "scissors"]
         SET humanChoice TO prompt "Choose between rock, paper, or scissors"
             SET humanChoice.toLowerCase(); //ensures input is case-insensitive
                 WHILE input is TRUE
                     IF choice is null (not a string)
-                        RETURN null // closes promptbox
+                        BREAK // closes promptbox
                     ELSE IF choice EQUALS "rock" OR "paper" OR "scissors"
                         DISPLAY message "You chose humanChoice" //backtick
                         RETURN choice
