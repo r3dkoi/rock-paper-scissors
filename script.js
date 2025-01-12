@@ -13,17 +13,21 @@
 
     //Human Choice function
     function getHumanChoice() {
-        let humanChoice = prompt("Choose between rock, paper, or scissors.");
+        const humanChoices = ["paper", "rock", "scissors"];
                 while (true) { 
-                    humanChoice = humanChoice.toLowerCase(); 
                     if (humanChoice === null) {
                         break;
-                    } else if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+                    } 
+                    
+                    let humanChoice = prompt("Choose between rock, paper, or scissors.");
+                    humanChoice = humanChoice.toLowerCase(); 
+                    
+                    if (humanChoices.includes(humanChoice)) {
                         console.log(`You chose ${humanChoice}.`);
                         return humanChoice;
                     } else {
                         alert("Invalid choice, please choose again.");
                     }
-        }
+                }
     }
 // } 
