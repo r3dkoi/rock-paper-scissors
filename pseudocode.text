@@ -4,7 +4,7 @@ CREATE function = getComputerChoice
 CREATE computerCHOICES ["rock","paper","scissors"]
 
     CREATE computerChoice AS Integer // declares randomIndex as a variable and is set as an integer. 
-    SET computerChoice TO computerChoices(Math.floor(Math.random() * LENGTH of computerCHOICES)) //  doing computerChoices in front of the math.floor means its choosing from that array.
+    SET computerChoice TO computerChoices[Math.floor(Math.random() * LENGTH of computerCHOICES)] //  doing computerChoices in front of the math.floor means its choosing from that array.
     DISPLAY message to console "Computer chose computerChoice" // backtick required
     RETURN computerChoice
 END function
@@ -14,13 +14,14 @@ END function
 LOGIC for Human Choice
 
 CREATE function = getHumanChoice
-        CREATE humanChoice AS string
-        PROMPT "Choose between rock, paper, or scissors"
-            SET choice.toLowerCase(); //ensures input is case-insensitive
+        CREATE humanChoice 
+        SET humanChoice TO prompt "Choose between rock, paper, or scissors"
+            SET humanChoice.toLowerCase(); //ensures input is case-insensitive
                 WHILE input is TRUE
                     IF choice is null (not a string)
                         RETURN null // closes promptbox
                     ELSE IF choice EQUALS "rock" OR "paper" OR "scissors"
+                        DISPLAY message "You chose humanChoice" //backtick
                         RETURN choice
                     ELSE 
                         ALERT "Invalid choice, please choose again."
