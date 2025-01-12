@@ -14,12 +14,12 @@
     //Human Choice function
     function getHumanChoice() {
         const humanChoices = ["paper", "rock", "scissors"];
+        let humanChoice = prompt("Choose between rock, paper, or scissors.");
                 while (true) { 
                     if (humanChoice === null) {
                         break;
                     } 
-                    
-                    let humanChoice = prompt("Choose between rock, paper, or scissors.");
+
                     humanChoice = humanChoice.toLowerCase(); 
                     
                     if (humanChoices.includes(humanChoice)) {
