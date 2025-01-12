@@ -13,13 +13,12 @@
 
     //Human Choice function
     function getHumanChoice() {
-        const humanChoices = ["rock", "paper", "scissors"];
         let humanChoice = prompt("Choose between rock, paper, or scissors.");
-                while (humanChoice === humanChoices) { 
+                while (true) { 
                     humanChoice = humanChoice.toLowerCase(); 
                     if (humanChoice === null) {
                         break;
-                    } else if (humanChoice === "rock" || "paper" || "scissors") {
+                    } else if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
                         console.log(`You chose ${humanChoice}.`);
                         return humanChoice;
                     } else {
