@@ -14,8 +14,9 @@
     //Human Choice function
     function getHumanChoice() {
         const humanChoices = ["paper", "rock", "scissors"];
-        let humanChoice = prompt("Choose between rock, paper, or scissors.");
+        let humanChoice = "";
                 while (true) { 
+                    humanChoice = prompt("Choose between rock, paper, or scissors.");
                     if (humanChoice === null) {
                         break;
                     } 
