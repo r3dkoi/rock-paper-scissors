@@ -14,7 +14,7 @@ END function
 LOGIC for Human Choice
 
 CREATE function = getHumanChoice
-        CREATE humanChoices ["rock", "paper", "scissors"]
+        CREATE humanChoices 
         SET humanChoice TO prompt "Choose between rock, paper, or scissors"
             SET humanChoice.toLowerCase(); //ensures input is case-insensitive
                 WHILE input is TRUE
