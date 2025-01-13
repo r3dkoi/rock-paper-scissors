@@ -30,25 +30,27 @@ function playGame() {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
+    while (humanScore < 5 && computerScore < 5) {
+        // round loops until score reaches 5
      // Single Round game logic
-    function playRound(humanSelection, computerSelection) {
-        let humanChoice = humanSelection;
-        let computerChoice = computerSelection;
-        while (humanScore < 5 && computerScore < 5) // round loops until score reaches 5
-            if (humanChoice === "scissors" && computerChoice === "paper" ||
-                humanChoice === "paper" && computerChoice === "rock" ||
-                humanChoice === "rock" && computerChoice === "paper") {
-                    (humanScore++);
-                    console.log(`Human wins this round! ${humanChoice} beats ${computerChoice}.`);
-                    return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
-                } else if (humanChoice === computerChoice) {
-                    console.log("It's a draw.")
-                    return ("No one gets any points!");
-                } else {
-                    (computerScore++);
-                    console.log(`Computer wins this round! ${computerChoice} beats ${humanChoice}.`);
-                    return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
-                }
+        function playRound(humanSelection, computerSelection) {
+            let humanChoice = humanSelection;
+            let computerChoice = computerSelection;
+                if (humanChoice === "scissors" && computerChoice === "paper" ||
+                    humanChoice === "paper" && computerChoice === "rock" ||
+                    humanChoice === "rock" && computerChoice === "paper") {
+                        (humanScore++);
+                        console.log(`Human wins this round! ${humanChoice} beats ${computerChoice}.`);
+                        return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
+                    } else if (humanChoice === computerChoice) {
+                        console.log("It's a draw.")
+                        return ("No one gets any points!");
+                    } else {
+                        (computerScore++);
+                        console.log(`Computer wins this round! ${computerChoice} beats ${humanChoice}.`);
+                        return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
+                    }
+        }
     }
     playRound(humanSelection, computerSelection);
 
