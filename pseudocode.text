@@ -42,10 +42,16 @@ SET computerScore = 0
 // Will probably increment the score loops to decide how long a round goes for.
 
 ---------------------------------
+LOGIC for playing a single round
+SET humanSelection TO getHumanChoice(); //calls getHumanChoice function
+SET computerSelection TO getComputerChoice(); //calls getComputerChoice function
+
+CALL playRound(humanSelection, computerSelection) // lets a single round to be played
 
 LOGIC to play a SINGLE round + Score function
 CREATE function = playRound
-SET humanChoice, computerChoice inside playRound() // gathers input from getComputerChoice & getHumanChoice
+SET humanChoice TO humanSelection // gathers input from getHumanChoice
+SET computerChoice TO computerSelection  // gathers input from getComputerChoice 
     WHILE input is TRUE
         IF humanCHOICE EQUALS computerCHOICE
             RETURN "It's a draw."
@@ -61,11 +67,7 @@ SET humanChoice, computerChoice inside playRound() // gathers input from getComp
             RETURN "Computer wins this round. `${computerChoice} beats ${humanChoice}."
     ENDFUNCTION
 ------------------------------------
-LOGIC for playing a single round
-SET humanSelection TO getHumanChoice(); //calls getHumanChoice function
-SET computerSelection TO getComputerChoice(); //calls getComputerChoice function
 
-CALL playRound(humanSelection, computerSelection) // lets a single round to be played
 
 ------------------------------------
 LOGIC for playing 5 Rounds and Declaring a winner
