@@ -37,14 +37,14 @@ function playGame() {
                     humanChoice === "rock" && computerChoice === "paper") {
                         (humanScore++);
                         console.log(`Human wins this round! ${humanChoice} beats ${computerChoice}.`);
-                        return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
+                        console.log(`Your score: ${humanScore}, VS the computer's score: ${computerScore}`);
                     } else if (humanChoice === computerChoice) {
                         console.log("It's a draw.")
-                        return ("No one gets any points!");
+                        console.log("No one gets any points!");
                     } else {
                         (computerScore++);
                         console.log(`Computer wins this round! ${computerChoice} beats ${humanChoice}.`);
-                        return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
+                        console.log(`Your score: ${humanScore}, VS the computer's score: ${computerScore}`);
                     }
         }
     
