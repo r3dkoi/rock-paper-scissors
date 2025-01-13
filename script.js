@@ -1,11 +1,10 @@
-// function playGame() {
+function playGame() {
     //Computer Choice function
     function getComputerChoice() {
         const computerChoices = ["rock", "paper", "scissors"];
         const computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
-            console.log(`Computer chose ${computerChoice}`);
+            console.log(`Computer chose ${computerChoice}.`);
             return computerChoice;
-        
     }
 
     //Human Choice function
@@ -17,9 +16,7 @@
                     if (humanChoice === null) {
                         break;
                     } 
-
                     humanChoice = humanChoice.toLowerCase(); 
-                    
                     if (humanChoices.includes(humanChoice)) {
                         console.log(`You chose ${humanChoice}.`);
                         return humanChoice;
@@ -28,16 +25,16 @@
                     }
                 }
     }
+    let humanScore = 0
+    let computerScore = 0
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
 
-     // Single Round function
+     // Single Round game logic
     function playRound(humanSelection, computerSelection) {
-        let humanScore = 0
-        let computerScore = 0
         let humanChoice = humanSelection;
         let computerChoice = computerSelection;
-        while (humanScore < 5 && computerScore < 5)
+        while (humanScore < 5 && computerScore < 5) // round loops until score reaches 5
             if (humanChoice === "scissors" && computerChoice === "paper" ||
                 humanChoice === "paper" && computerChoice === "rock" ||
                 humanChoice === "rock" && computerChoice === "paper") {
@@ -52,7 +49,13 @@
                     console.log(`Computer wins this round! ${computerChoice} beats ${humanChoice}.`);
                     return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
                 }
-
-
     }
-// 
+    playRound(humanSelection, computerSelection);
+
+    // declare the winner and end the game
+    if (humanScore === 5) {
+        console.log("You win, good job!")
+    } else {
+        console.log("The computer wins, better luck next time.");
+    }
+}
