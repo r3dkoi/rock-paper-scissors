@@ -42,17 +42,10 @@ SET computerScore = 0
 // Will probably increment the score loops to decide how long a round goes for.
 
 ---------------------------------
-LOGIC for playing a single round
-SET humanSelection TO getHumanChoice(); //calls getHumanChoice function
-SET computerSelection TO getComputerChoice(); //calls getComputerChoice function
-
-CALL playRound(humanSelection, computerSelection) // lets a single round to be played
-
 LOGIC to play a SINGLE round + Score function
 CREATE function = playRound
 SET humanChoice TO humanSelection // gathers input from getHumanChoice
 SET computerChoice TO computerSelection  // gathers input from getComputerChoice 
-    WHILE humanScore and computerScore is LESS THAN 5
         IF humanCHOICE EQUALS computerCHOICE
             RETURN "It's a draw."
         ELSE IF humanChoice EQUALS "scissors" AND computerChoice EQUALS "paper" OR
@@ -64,8 +57,19 @@ SET computerChoice TO computerSelection  // gathers input from getComputerChoice
                 INCREMENT computerScore by 1
             RETURN "Computer wins this round. `${computerChoice} beats ${humanChoice}."
     ENDFUNCTION
+---------------
+LOGIC for looping rounds until a score of 5 is reached
+WHILE humanScore and computerScore is LESS THAN 5
+SET humanSelection TO getHumanChoice(); //calls getHumanChoice function
+SET computerSelection TO getComputerChoice(); //calls getComputerChoice function
+CALL playRound(humanSelection, computerSelection) // lets a single round to be played
+-----------
+// Logic to declare the winner, underneath playRound
+IF humanScore EQUALS 5
+    DISPLAY "You win, good job!"
+ELSE 
+    DISPLAY "The computer wins, better luck next time."
 
-    CALL playRound
 ------------------------------------
 
 
