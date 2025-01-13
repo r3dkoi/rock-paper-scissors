@@ -27,11 +27,7 @@ function playGame() {
     }
     let humanScore = 0
     let computerScore = 0
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
 
-    while (humanScore < 5 && computerScore < 5) {
-        // round loops until score reaches 5
      // Single Round game logic
         function playRound(humanSelection, computerSelection) {
             let humanChoice = humanSelection;
@@ -51,9 +47,14 @@ function playGame() {
                         return (`Your score: ${humanScore} vs the computer's score: ${computerScore}`);
                     }
         }
+    
+    // function to playRounds until a score of 5 is reached
+    while (humanScore < 5 && computerScore < 5) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection); // calls playRound
     }
-    playRound(humanSelection, computerSelection);
-
+    
     // declare the winner and end the game
     if (humanScore === 5) {
         console.log("You win, good job!")
