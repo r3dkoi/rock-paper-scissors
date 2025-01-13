@@ -50,20 +50,20 @@ CALL playRound(humanSelection, computerSelection) // lets a single round to be p
 
 LOGIC to play a SINGLE round + Score function
 CREATE function = playRound
+SET humanScore = 0
+SET computerScore = 0
 SET humanChoice TO humanSelection // gathers input from getHumanChoice
 SET computerChoice TO computerSelection  // gathers input from getComputerChoice 
-    WHILE input is TRUE
+    WHILE humanScore and computerScore is LESS THAN 5
         IF humanCHOICE EQUALS computerCHOICE
             RETURN "It's a draw."
         ELSE IF humanChoice EQUALS "scissors" AND computerChoice EQUALS "paper" OR
                 humanChoice EQUALS "paper" AND computerChoice EQUALS "rock" OR
                 humanChoice EQUALS "rock" AND computerChoice EQUALS "paper"
-                    LOOP FOR humanScore FROM 0 to 5
-                        INCREMENT by 1
+                        INCREMENT humanScore by 1
                     RETURN "You win this round! `${humanChoice} beats ${computerChoice!}`" // make sure to do backticks here. 
         ELSE 
-            LOOP FOR computerScore FROM 0 to 5
-                INCREMENT by 1
+                INCREMENT computerScore by 1
             RETURN "Computer wins this round. `${computerChoice} beats ${humanChoice}."
     ENDFUNCTION
 ------------------------------------
